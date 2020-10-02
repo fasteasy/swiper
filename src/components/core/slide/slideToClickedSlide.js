@@ -28,7 +28,7 @@ export default function () {
       } else {
         swiper.slideTo(slideToIndex);
       }
-    } else if (slideToIndex > swiper.slides.length - slidesPerView) {
+    } else if (slideToIndex >= swiperLength - slidesPerView || slideToIndex <= 0) {
       swiper.loopFix();
       slideToIndex = $wrapperEl
         .children(`.${params.slideClass}[data-swiper-slide-index="${realIndex}"]:not(.${params.slideDuplicateClass})`)
