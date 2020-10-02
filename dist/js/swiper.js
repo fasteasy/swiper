@@ -3,11 +3,11 @@
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * http://www.idangero.us/swiper/
  *
- * Copyright 2014-2019 Vladimir Kharlampidi
+ * Copyright 2014-2020 Vladimir Kharlampidi
  *
  * Released under the MIT License
  *
- * Released on: October 16, 2019
+ * Released on: October 2, 2020
  */
 
 (function (global, factory) {
@@ -2240,7 +2240,7 @@
         } else {
           swiper.slideTo(slideToIndex);
         }
-      } else if (slideToIndex > swiper.slides.length - slidesPerView) {
+      } else if (slideToIndex >= swiperLength - slidesPerView || slideToIndex <= 0) {
         swiper.loopFix();
         slideToIndex = $wrapperEl
           .children(("." + (params.slideClass) + "[data-swiper-slide-index=\"" + realIndex + "\"]:not(." + (params.slideDuplicateClass) + ")"))
